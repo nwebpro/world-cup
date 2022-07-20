@@ -35,6 +35,8 @@ img{
     border-radius: 30px;
     margin: 50px 0px 130px;
     padding: 33px 79px 0px 106px;
+    position: relative;
+    overflow: hidden;
 }
 .hero-text-area{
     color: #fff;
@@ -63,6 +65,62 @@ img{
 .hero-image-area img{
     margin-bottom: -5px;
 }
+/* Animation */
+.bubble{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    bottom: -70px;
+}
+.bubble img{
+    width: 50px;
+    animation: bubble 5s linear infinite;
+}
+@keyframes bubble {
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-60vh);
+        opacity: 0;
+    }
+}
+.bubble img:nth-child(1){
+    animation-delay: 2s;
+    width: 20px;
+}
+.bubble img:nth-child(2){
+    animation-delay: 1s;
+    width: 30px;
+}
+.bubble img:nth-child(3){
+    animation-delay: 3s;
+}
+.bubble img:nth-child(4){
+    animation-delay: 2s;
+    width: 25px;
+}
+.bubble img:nth-child(5){
+    animation-delay: 5s;
+    width: 45px;
+}
+.bubble img:nth-child(6){
+    animation-delay: 6s;
+    width: 30px;
+}
+.bubble img:nth-child(7){
+    width: 35px;
+    animation-delay: 4.5s;
+}
 /* ==================================
     Blog Section Style      
 =====================================*/
@@ -73,6 +131,7 @@ img{
 }
 .side-nav{
     flex: 25%;
+    position: relative;
 }
 .side-nav ul{
     list-style-type: none;
@@ -80,6 +139,8 @@ img{
     border-radius: 10px;
     margin-right: 24px;
     padding: 30px 30px 1px;
+    position: sticky;
+    top: 30px;
 }
 .side-nav ul li{
     margin-bottom: 30px;
@@ -238,6 +299,21 @@ footer{
 /* ==================================
     Responsive Style Here       
 =====================================*/
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    .container{
+        width: 100%;
+    }
+    .hero-wrapper{
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+    }
+    .hero-image-area img {
+        width: 300px;
+        margin-bottom: -96px;
+        padding: 58px 17px 50px 76px;
+    }
+}
 /* Tablet Device */
 @media only screen and (min-width: 577px) and (max-width: 768px){
     body{
@@ -248,12 +324,11 @@ footer{
         width: 100%;
     }
     .hero-wrapper{
-        display: grid;
-        grid-template-columns: 316px 323px;
+        display: flex;
         justify-content: space-between;
-        gap: 2px;
+        gap: 30px;
         margin: 50px 15px 70px;
-        padding: 58px 17px 0px 76px;
+        padding: 58px 17px 50px 76px;
     }
     .hero-text-area h1{
         font-size: 40px;
@@ -264,8 +339,14 @@ footer{
         padding-right: 0px;
         margin-bottom: 46px;
     }
-    .hero-image-area img{
-        margin-bottom: -7px;
+    .hero-image-area img {
+        margin-bottom: -96px;
+    }
+    .bubble img:nth-child(3){
+        width: 30px;
+    }
+    .bubble img:nth-child(5){
+        width: 40px;
     }
     /* Blog Area */
     .blog-wrapper{
@@ -350,6 +431,13 @@ footer{
     }
     .hero-image-area img {
         margin-bottom: -7px;
+    }
+    
+    .bubble img:nth-child(3){
+        width: 30px;
+    }
+    .bubble img:nth-child(5){
+        width: 35px;
     }
     /* Blog Area */
     .blog-wrapper{
